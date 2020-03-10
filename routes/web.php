@@ -23,3 +23,8 @@ Route::get('/category', function ()
 {
     return view('category');
 });
+
+Route::get('/category/topic', function () 
+{
+    return view('topic');
+});

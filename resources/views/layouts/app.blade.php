@@ -10,32 +10,32 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Muli:300,400" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="{{ asset('fonts/icomoon/style.css') }}">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
 
   <!-- carousel -->
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     
   {{-- if click a image, show the bigger image.  --}}
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="{{ asset('css/jquery.fancybox.min.css') }}">
 
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
 
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
 
-  <link rel="stylesheet" href="css/aos.css">
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+  <link href="{{ asset('css/jquery.mb.YTPlayer.min.css') }}" media="all" rel="stylesheet" type="text/css">
 
   <!-- Styles -->
   {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="{{ asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous') }}">
   @yield('css')
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -238,39 +238,39 @@
   {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> --}}
 
   {{-- useful tools of jQuery --}}
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
+  <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-ui.js') }}"></script>
 
   {{-- JavaScript library that can create parts like speech balloons --}}
-  {{-- <script src="js/popper.min.js"></script> --}}
-  {{-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script> --}}
-  {{-- <script src="https://unpkg.com/@popperjs/core@2"></script> --}}
-  {{-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> --}}
+  {{-- <script src="{{ asset('js/popper.min.js') }}"></script> --}}
+  {{-- <script src="{{ asset('https://unpkg.com/@popperjs/core@2/dist/umd/popper.js') }}"></script> --}}
+  {{-- <script src="{{ asset('https://unpkg.com/@popperjs/core@2') }}"></script> --}}
+  {{-- <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous') }}"></script> --}}
 
 
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-  <script src="js/owl.carousel.min.js"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 
-  <script src="js/jquery.stellar.min.js"></script>
-  {{-- <script src="js/jquery.countdown.min.js"></script> --}}
+  <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+  {{-- <script src="{{ asset('js/jquery.countdown.min.js') }}"></script> --}}
 
    {{-- For making calendar easily↓ --}}
-  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
 
   {{-- Value for changing speed of effect --}}
-  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
   
   {{-- Animation On Scroll library --}}
-  <script src="js/aos.js"></script>
+  <script src="{{ asset('js/aos.js') }}"></script>
 
   {{-- if click a image, show the bigger image.  --}}
-  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
 
   {{-- useful property that is pasted to a specified position when a specified element such as a header, navigation, or sidebar is scrolled (sticky). --}}
-  <script src="js/jquery.sticky.js"></script>
+  <script src="{{ asset('js/jquery.sticky.js') }}"></script>
 
-  <script src="js/main.js"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 
