@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="css/welcome.css">
+<link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 @endsection
 
 @section('content')
-  <div class="intro-section" style="background-image: url('images/engineer.jpg');">
+  <div class="intro-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">

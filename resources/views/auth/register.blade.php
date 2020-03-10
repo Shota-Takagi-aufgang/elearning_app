@@ -1,23 +1,11 @@
 @extends('layouts.app')
 
-<style>
-    .card {
-        background-image: url("images/iphone.jpeg");
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-
-    }
-</style>
-
 @section('content')
     <div class="id-card">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
+                    <div class="login-card card">
                         <div class="card-header">{{ __('Register Student Card') }}</div>
         
                         <div class="card-body">
