@@ -117,7 +117,7 @@
                   <a href="/home" class="nav-link text-left">Home</a>
                 </li>
                 <li>
-                  <a href="" class="nav-link text-left">About Us</a>
+                  <a href="/category" class="nav-link text-left">Category</a>
                 </li>
                 <li>
                   <a href="" class="nav-link text-left">Our Projects</a>
