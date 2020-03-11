@@ -13,7 +13,7 @@
                 <a class="nav-link active" href="">Not learned</a>
             </li>
         </ul>
-        <h1 class="ml-2 mt-2">Mechanical</h1>
+    <h1 class="ml-2 mt-2">{{ $category }}</h1>
         <div class="col-sm-12 col-lg-6">
             <div class="card">
                 <h3 class="card-header">Featured</h3>

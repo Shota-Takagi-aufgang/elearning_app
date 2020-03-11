@@ -20,31 +20,31 @@
 
             <div class="col-sm-12 col-lg-4">
                 <div class="list-group">
-                    <a href="/category/topic" class="list-group-item list-group-item-action flex-column align-items-start ">
+                    <a href="/category/Mechanical Engineering/topic" class="list-group-item list-group-item-action flex-column align-items-start ">
                         <div class="mx-auto justify-content-between">
                             <h5 class="mb-1 text-dark">Mechanical Engineering</h5>
                             <small>Mechanical engineering is an engineering discipline that combines engineering physics and mathematics principles with materials science to design, analyze, manufacture, and maintain mechanical systems.</small>
                         </div>
                     </a>
-                    <a href="/material" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a href="/category/Material Engineering/topic" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="mx-auto  justify-content-between">
                             <h5 class="mb-1 text-warning" >Material Engineering</h5>
                             <small class="text-muted">Materials engineers create and study materials at the atomic level. They use computers to understand and model the characteristics of materials and their components. </small>
                         </div>
                     </a>
-                    <a href="/control" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a href="/category/Control Engineering/topic" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="mx-auto  justify-content-between">
                             <h5 class="mb-1 text-danger">Control Engineering</h5>
                             <small class="text-muted">Control engineering or control systems engineering is an engineering discipline that applies automatic control theory to design systems with desired behaviors in control environments.</small>
                         </div>
                     </a>
-                    <a href="/fluiddynamics" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a href="/category/Fluiddynamics/topic" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="mx-auto  justify-content-between">
                             <h5 class="mb-1 text-success">Fluid Dynamics</h5>
                             <small class="text-muted">fluiddynamics is a subdiscipline of fluid mechanics that describes the flow of fluids—liquids and gases.</small>
                         </div>
                     </a>
-                    <a href="/thermodynamics" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a href="/category/Thermodynamics/topic" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="mx-auto  justify-content-between">
                             <h5 class="mb-1 text-danger">Thermodynamics</h5>
                             <small class="text-muted">Thermodynamics is the branch of physics that deals with the relationships between heat and other forms of energy.</small>
