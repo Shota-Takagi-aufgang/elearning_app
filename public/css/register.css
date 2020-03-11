@@ -1,0 +1,8 @@
+.login-card {
+    background-image: url("images/iphone.jpeg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
