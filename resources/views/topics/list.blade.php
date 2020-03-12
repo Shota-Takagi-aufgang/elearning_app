@@ -19,7 +19,7 @@
                     <td>{{ $topic->title }}</td>
                     <td>{{ $topic->description }}</td>   
                     <td>{{ $topic->category }}</td>   
-                    <td><a class="btn btn-warning" href="/books/{{ $topic->id }}/edit">Edit</a><a class="btn btn-danger" href="/books/{{ $topic->id }}/delete">Delete</a></td>   
+                    <td><a class="btn btn-warning" href="{{ route('topic.edit', ['id' =>$topic->id]) }}">Edit</a><a class="btn btn-danger" href="{{ route('topic.delete', ['id' =>$topic->id]) }}">Delete</a></td>   
                 </tr>           
                 @endforeach
             </tbody>
