@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 <button type="submit" class="btn btn-primary">Create</button>
-            <div><a class="btn-primary" href=""> Back</a></div>
+            <div><a class="btn-primary" href="{{ route('questions.list', compact('questions', 'topic')) }}"> Back</a></div>
             </form>
         </div>
     </div>
