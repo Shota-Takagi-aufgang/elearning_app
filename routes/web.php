@@ -1,5 +1,5 @@
 <?php
-
+use App\Topic;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +26,8 @@ Route::get('/category', function ()
 
 Route::get('/category/{category}/topic', function ($category) {
     // $topic = Topic::where('category', $category)->get();
-    return view('topics.topic', compact('category'));
+    $topics = Topic::paginate(10);
+    return view('topics.topic', compact('category','topics'));
 });
 
 
@@ -45,3 +46,19 @@ Route::get('/admin/topics/{id}/questions','QuestionController@list')->name('ques
 Route::get('/admin/topics/{id}/questions/{question_id}/edit','QuestionController@edit')->name('question.edit');
 Route::patch('/admin/topics/{id}/questions/{question_id}/update','QuestionController@update')->name('question.update');
 Route::get('/admin/topics/{id}/{question_id}/delete','QuestionController@delete')->name('question.delete');
+
+// For answering the questions  
+Route::get('/topics/{topic_id}/questions/{question_id}/answer/new', 'AnswerController@start')->name('start');
+// Route::post('/topics/{topic_id}/results', 'AnswerController@results')->name('results');
+
+Route::get('/test', function () {
+    return view('/answers.answer');
+});
+
+//  For follow-follower functional
+Route::get('/userlist', 'UserController@userlist')->name('userlist');
+Route::get('/users/{user_id}/show','UserController@show')->name('users.show');
+Route::get('/follow/{followed_id}/','UserController@follow')->name('user.follow');
+Route::get('/unfollow/{followed_id}/','UserController@unfollow')->name('user.unfollow');
+// Route::get('/users/{user_id}/followinglist','UserController@followinglist')->name('users.followinglist');
+// Route::get('/users/{user_id}/followerslist','UserController@followerlist')->name('users.followerslist');
