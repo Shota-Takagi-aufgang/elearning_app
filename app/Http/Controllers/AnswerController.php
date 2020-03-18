@@ -3,12 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Topic;
+use App\Question;
 use App\Answer;
 
 class AnswerController extends Controller
 {
-    public function start() {
-        $answer = Answer::find($question_id);
-        return view('answers.', compact('question'));
+    public function quiz($topic_id, $lesson_id) {
+        $questions = Question::where('topic_id', $topic_id)->paginate(3);
+
+        return view('answers.answer', compact('questions', 'topic_id', 'lesson_id'));
+    }
+
+    public function saveAnswers(Request $request, $topic_id, $lesson_id) {
+
+        $answer1 = Answer::create([
+            'user_id' => auth()->user()->id,
+            'question_id' => $request->question1Id,
+            'user_answer' => $request->question1Answer,
+            'lesson_id' => $lesson_id
+        ]);
+
+        $answer2 = Answer::create([
+            'user_id' => auth()->user()->id,
+            'question_id' => $request->question2Id,
+            'user_answer' => $request->question2Answer,
+            'lesson_id' => $lesson_id
+        ]);
+
+        $answer3 = Answer::create([
+            'user_id' => auth()->user()->id,
+            'question_id' => $request->question3Id,
+            'user_answer' => $request->question3Answer,
+            'lesson_id' => $lesson_id
+        ]);
+        // Results is saved
+
+        return redirect($request->nextPageUrl);
     }
 }

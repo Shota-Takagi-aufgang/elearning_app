@@ -37,6 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function lessons() {
+        return $this->hasMany('App\Lesson');
+    }
+
+    // For follow and follower system
     public function followers() {
         return $this->belongsToMany('App\User', 'relationships', 'followed_id', 'follower_id')->withtimestamps();
     }

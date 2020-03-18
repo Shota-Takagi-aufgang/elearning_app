@@ -22,7 +22,7 @@
                         <h3 class="card-header">{{ $topic->title }}</h3>
                         <div class="card-body">
                         <p class="card-text">{{ $topic->description }}</p>
-                        <a href="#!" class="btn btn-primary">Study</a>
+                        <a href="{{ route('lesson', ['topic_id' => $topic->id]) }}" class="btn btn-primary">Study</a>
                         </div>
                     </div>
                 </div>

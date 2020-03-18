@@ -1,116 +1,66 @@
-<html>
-<head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+@extends('layouts.app')
 
-        body {
-            padding: 50px;
-        }
-
-    </style>
-</head>
-<body>
-    <div id="app" class="row">
-        <!-- クイズを表示する部分 -->
-        <div class="offset-3 col-6" v-if="!completed">
+@section('content')
+    
+    <form action="{{ route('answer.save', ['topic_id' => $topic_id, 'lesson_id' => $lesson_id]) }}" method="POST">
+        @csrf
+        @if ($questions->nextPageUrl() == null)
+            <input type="hidden" name="nextPageUrl" id="nextPageUrl" value="{{ route('result', ['topic_id' => $topic_id ,'lesson_id' => $lesson_id]) }}">
+        @else
+            <input type="hidden" name="nextPageUrl" id="nextPageUrl" value="{{ $questions->nextPageUrl() }}">
+        @endif
+    @foreach ($questions as $key => $question)
+    <input type="hidden" name="question{{ $key+1 }}Id" id="question{{ $key }}" value="{{ $question->id }}">
+    <div id="app" class="row mt-2 justify-content-center">
+        <div class="col-sm-6 col-lg-4" >
             <div class="card">
                 <div class="card-body">
-                    <p class="badge badge-dark">第 {{ (questionIndex+1) }} 問</p>
+                <p class="badge badge-dark">Question Number  {{ $key+1 }}</p>
                     <br>
-                    <h4 class="card-title">{{ currentQuestion.question }}</h4>
+                <h3 class="card-title">{{ $question->question }}</h3>
                     <hr>
-                    <button
-                        type="button"
-                        class="btn btn-primary btn-lg btn-block text-left"
-                        v-for="(answer,index) in currentQuestion.answers"
-                        @click="addAnswer(index)">{{ (index+1) }}. {{ answer }}</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 結果表示する部分 -->
-        <div class="offset-3 col-6" v-if="completed">
-            <div class="card">
-                <div class="card-body">
-                    <p class="badge badge-dark">結果</p>
-                    <div v-for="(question,index) in this.questions">
-                        <h4 class="card-title">{{ question.question }}</h4>
-                        <ul>
-                            <li v-for="answer in question.answers">{{ answer }}</li>
-                        </ul>
-                        <span v-if="question.answer == answers[index]">正解 &#x1F44D;（{{ question.answers[question.answer] }}）</span>
-                        <span v-else>不正解 &#x1F622;<br>正解は「{{ question.answers[question.answer] }}」でした。</span>
-                        <hr>
+                    <div class="container">
+                        <div class="row">
+                            <div class="btn btn-primary btn-lg btn-block text-center col-sm-10">{{ $question->option1 }}</div>
+                            <div class="col-sm-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question{{ $key+1 }}Answer" id="option1" value="option1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="btn btn-primary btn-lg btn-block text-center col-sm-10">{{ $question->option2 }}</div>
+                            <div class="col-sm-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question{{ $key+1 }}Answer" id="option2" value="option2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="btn btn-primary btn-lg btn-block text-center col-sm-10">{{ $question->option3 }}</div>
+                            <div class="col-sm-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question{{ $key+1 }}Answer" id="option3" value="option3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="btn btn-primary btn-lg btn-block text-center col-sm-10">{{ $question->option4 }}</div>
+                            <div class="col-sm-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="question{{ $key+1 }}Answer" id="option4" value="option4">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <script>
-
-        new Vue({
-            el: '#app',
-            data: {
-                answers: [],
-                questionIndex: 0,
-                questions: [
-                    {
-                        question: '囲碁の石の大きさはどっちが大きい？',
-                        answers: [
-                            '白い石',
-                            '黒い石',
-                            'どちらも同じ',
-                        ],
-                        answer: 1
-                    },
-                    {
-                        question: 'コンビニチェーン・セブンイレブンのアルファベット表記で１文字だけ小文字なのは？',
-                        answers: [
-                            'N',
-                            'L',
-                            'V',
-                        ],
-                        answer: 0
-                    },
-                    {
-                        question: 'カラオケは「空○○」略です。空欄に入る言葉は何？',
-                        answers: [
-                            'OK',
-                            'オーケストラ',
-                            'おけら',
-                        ],
-                        answer: 1
-                    }
-                ]
-            },
-            methods: {
-                addAnswer: function(index) {
-
-                    this.answers.push(index);
-
-                    if(!this.completed) {
-
-                        this.questionIndex++;
-
-                    }
-
-                }
-            },
-            computed: {
-                currentQuestion: function() {
-
-                    return this.questions[this.questionIndex];
-
-                },
-                completed: function() {
-
-                    return (this.questions.length == this.answers.length);
-
-                }
-            }
-        })
-
-    </script>
-</body>
-</html>
+    @endforeach
+    <div class="row justify-content-center mt-4">
+        <button type="submit">Next Page</button>
+        <div>{{ $questions->nextPageUrl() }}</div>
+    </div>
+    </form>
+@endsection
