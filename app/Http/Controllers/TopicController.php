@@ -25,8 +25,4 @@ class TopicController extends Controller
         $topics = Topic::all();
         return view('topics.list', compact('topics'));
     }    
-
-
-
-
 }
