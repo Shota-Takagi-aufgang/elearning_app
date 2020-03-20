@@ -5,6 +5,7 @@
     <form action="{{ route('answer.save', ['topic_id' => $topic_id, 'lesson_id' => $lesson_id]) }}" method="POST">
         @csrf
         @if ($questions->nextPageUrl() == null)
+            <input type="hidden" name="lastPage" id="lastPageUrl" value="true">
             <input type="hidden" name="nextPageUrl" id="nextPageUrl" value="{{ route('result', ['topic_id' => $topic_id ,'lesson_id' => $lesson_id]) }}">
         @else
             <input type="hidden" name="nextPageUrl" id="nextPageUrl" value="{{ $questions->nextPageUrl() }}">
