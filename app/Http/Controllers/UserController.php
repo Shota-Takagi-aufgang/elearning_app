@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Relationship;
 
 class UserController extends Controller
 {
@@ -29,11 +30,11 @@ class UserController extends Controller
         $follower = auth()->user();
         $follower->followedUsers()->attach($followed_id);
 
-        // $activity = Activity::create([
-        //     'user_id' => auth()->user()->id,
-        //     'activity_id' => $user->activity_id,
-        //     'activity_type' => $user
-        // ]);
+        $relationship = Relationship::where('followed_id', $followed_id)->where('follower_id', $follower->id)->first();
+        
+        $relationship->activity()->create([
+            'user_id' => auth()->user()->id
+        ]);
 
         return back();
     }
@@ -58,8 +59,4 @@ class UserController extends Controller
     //     return view('users.followerslist', compact('users'));
     // }
 
-    public function activity(User $user) 
-    {
-        return view('/home', compact('user'));
-    }
 }

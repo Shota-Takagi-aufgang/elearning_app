@@ -47,6 +47,22 @@
                     <div class="card-body">
                         <title>ACTIVITY FEED</title>
                         <div>
+                            @foreach ($activities as $activity)
+                                @if ($activity->notifiable_type == "App\Lesson")
+                                    <h4>You learned {{ $activity->notifiable->correct_numbers }} of {{ count($activity->notifiable->answers) }} in {{ $activity->notifiable->topic->title }}</h4>
+                                @else
+                                    <h4>{{ $activity->notifiable->follower->first_name }} 
+                                        follow
+                                        @if ($activity->notifiable->followed == auth()->user() )
+                                            You
+                                        @else
+                                            {{ $activity->notifiable->followed->first_name }} 
+                                            {{ $activity->notifiable->followed->last_name}}
+                                        @endif
+                                    </h4>
+                                @endif
+                                    <small class="text-muted">{{ $activity->notifiable->created_at->diffforHumans() }} </small>
+                            @endforeach
                         </div>
                     </div>
                 </div>
