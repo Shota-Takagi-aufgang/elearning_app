@@ -15,8 +15,16 @@ class QuestionController extends Controller
 
     public function store($id, Request $request) 
     {
+        $request->validate([
+            'question' => ['required', 'string', 'max:255'],
+            'option1' => ['required', 'string', 'max:50'],
+            'option2' => ['required', 'string', 'max:50'],
+            'option3' => ['required', 'string', 'max:50'],
+            'option4' => ['required', 'string', 'max:50'],
+            'correct_answer' => ['required', 'string', 'max:50'],
+        ]);
+
         $question = Question::create([
-            'topic_id' => $id,
             'question' => $request->title,
             'option1' => $request->option1,
             'option2' => $request->option2,
@@ -48,8 +56,16 @@ class QuestionController extends Controller
     public function update(Request $request, $id, $question_id) {
         $topic = Topic::find($id);
         $question = Question::find($question_id);
+        $request->validate([
+            'question' => ['required', 'string', 'max:255'],
+            'option1' => ['required', 'string', 'max:50'],
+            'option2' => ['required', 'string', 'max:50'],
+            'option3' => ['required', 'string', 'max:50'],
+            'option4' => ['required', 'string', 'max:50'],
+            'correct_answer' => ['required', 'string', 'max:50'],
+        ]);
+        
         $question->update([
-            'topic_id' => $id,
             'question' => $request->question,
             'option1' => $request->option1,
             'option2' => $request->option2,

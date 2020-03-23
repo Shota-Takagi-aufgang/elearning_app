@@ -19,6 +19,10 @@ class AnswerController extends Controller
     public function saveAnswers(Request $request, $topic_id, $lesson_id) 
     {
 
+        $request->validate([
+            'user_answer' => ['required', 'string', 'max:255'],
+        ]);
+        
         $answer1 = Answer::create([
             'user_id' => auth()->user()->id,
             'question_id' => $request->question1Id,

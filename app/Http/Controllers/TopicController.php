@@ -13,6 +13,12 @@ class TopicController extends Controller
 
     public function store(Request $request) 
     {
+        $request->validate([
+            'title' => ['required', 'string', 'min:3', 'max:50'],
+            'descripiton' => ['required', 'string','min:6', 'max:255'],
+            'category' => ['required', 'string', 'min:3', 'max:50',]
+        ]);
+
         $topic = Topic::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -39,6 +45,12 @@ class TopicController extends Controller
 
     public function update(Request $request ,$id) {
         $topic = Topic::find($id);
+        $request->validate([
+            'title' => ['required', 'string', 'min:3', 'max:50'],
+            'descripiton' => ['required', 'string','min:6', 'max:255'],
+            'category' => ['required', 'string', 'min:3', 'max:50',]
+        ]);
+        
         $topic->title = $request->title;
         $topic->description = $request->description;
         $topic->category = $request->category;

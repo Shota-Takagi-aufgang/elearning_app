@@ -38,4 +38,29 @@ class HomeController extends Controller
 
         return view('home',compact('activities'));
     }
+
+    public function update(Request $request) {
+        $request->validate([
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'new_password' => 'required|max:255|min:6|confirmed'
+        ]);
+        if (!empty($request->new_password)) {
+            // validaate new_password
+            $request->validate([
+                'new_password' => 'required|max:255|min:8|confirmed'
+            ]);
+
+            // after validating, update the password
+            auth()->user()->update([
+                "password" => Hash::make( $request->new_password) // Hash::nake() is for encryptiong the password
+            ]);
+        }
+        // Do this if it is valid
+        auth()->user()->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name
+        ]);
+        return redirect('home');
+    }
 }
