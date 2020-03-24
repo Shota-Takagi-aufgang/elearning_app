@@ -62,39 +62,13 @@
           </div>
           <div class="col-lg-3 d-none d-lg-block">
 
-            <div class="quick-contact-icons d-flex">
-              <div class="icon align-self-start">
-                <span class="flaticon-placeholder text-primary"></span>
-              </div>
-              <div class="text">
-                <span class="h4 d-block">Kyoto*</span>
-                <span class="caption-text">Kiyomizu Temple :D</span>
-              </div>
-            </div>
-
           </div>
           <div class="col-lg-3 d-none d-lg-block">
-            <div class="quick-contact-icons d-flex">
-              <div class="icon align-self-start">
-                <span class="flaticon-call text-primary"></span>
-              </div>
-              <div class="text">
-                <span class="h4 d-block">090 1996 0822</span>
-                <span class="caption-text">I don't care</span>
-              </div>
-            </div>
+            
           </div>
 
           <div class="col-lg-3 d-none d-lg-block">
-            <div class="quick-contact-icons d-flex">
-              <div class="icon align-self-start">
-                <span class="flaticon-email text-primary"></span>
-              </div>
-              <div class="text">
-                <span class="h4 d-block">shota.takagi@gmail.com</span>
-                <span class="caption-text">Shota Takagi</span>
-              </div>
-            </div>
+            
           </div>
 
           <div class="col-6 d-block d-lg-none text-right">
@@ -104,12 +78,10 @@
         </div>
       </div>
       
-
       <div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-lg-block" role="banner" style="background-color:orangered">
 
       <div class="container">
         <div class="d-flex align-items-center">
-          
           <div class="mr-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
@@ -118,16 +90,6 @@
                 </li>
                 <li>
                   <a href="/category" class="nav-link text-left">Category</a>
-                </li>
-                <li>
-                  <a href="" class="nav-link text-left">Our Projects</a>
-                </li>
-                <li>
-                    <a href="/lesson" class="nav-link text-left">Online Lesson</a>
-                </li>
-                <li><a href="" class="nav-link text-left">Blog</a></li>
-                <li>
-                    <a href="" class="nav-link text-left">Contact</a>
                 </li>
                 @guest
                     <li class="nav-item">
@@ -162,66 +124,32 @@
                         </div>
                     </li>
                     @endguest
-
               </ul>                                                                                                                                                                                                                                                                                          </ul>
             </nav>
-
           </div>
-         
         </div>
       </div>
-
     </div>
-    
     </div>
     
     <main class="py-4">
         @yield('content')
     </main>
 
-
     <div class="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
             <p class="mb-4"><img src="images/logo2.png" alt="Image" class="img-fluid"></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>  
+            <p></p>  
             <p><a href="#">Learn More</a></p>
           </div>
           <div class="col-lg-3">
-            <h3 class="footer-heading"><span>Our Company</span></h3>
+            <h3 class="footer-heading"><span>Quiz app</span></h3>
             <ul class="list-unstyled">
                 <li><a href="#">About</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Projects</a></li>
+                
             </ul>
-          </div>
-          <div class="col-lg-3">
-              <h3 class="footer-heading"><span>Our Services</span></h3>
-              <ul class="list-unstyled">
-                  <li><a href="#">Industrial</a></li>
-                  <li><a href="#">Construction</a></li>
-                  <li><a href="#">Remodeling</a></li>
-              </ul>
-          </div>
-          <div class="col-lg-3">
-              <h3 class="footer-heading"><span>Contact</span></h3>
-              <ul class="list-unstyled">
-                  <li><a href="#">Help Center</a></li>
-                  <li><a href="#">Support Community</a></li>
-                  <li><a href="#">Press</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Our Partners</a></li>
-              </ul>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            
           </div>
         </div>
       </div>

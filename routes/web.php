@@ -30,7 +30,6 @@ Route::get('/category/{category}/topic', function ($category) {
     return view('topics.topic', compact('category','topics'));
 });
 
-
 // For managing topics
 Route::get('/admin/topics/create','TopicController@create')->name('topic.create');
 Route::post('/admin/topics/new', 'TopicController@store')->name('topic.store');

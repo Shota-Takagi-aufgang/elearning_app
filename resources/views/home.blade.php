@@ -38,7 +38,6 @@
                         Words learned
                     </div>
                   </div>
-
             </div>
         </div>
         <div class="col-sm-8 col-lg-8">
