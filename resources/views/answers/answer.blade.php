@@ -60,8 +60,11 @@
     </div>
     @endforeach
     <div class="row justify-content-center mt-4">
-        <button type="submit">Next Page</button>
-        <div>{{ $questions->nextPageUrl() }}</div>
+        @if ($questions->nextPageUrl() == null)
+            <button type="submit">Result</button>
+        @else
+            <button type="submit">Next Page</button>
+        @endif
     </div>
     </form>
 @endsection

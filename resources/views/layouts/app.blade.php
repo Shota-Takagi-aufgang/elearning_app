@@ -56,7 +56,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-6 col-lg-3">
-            <a href="index.html">
+            <a href="/">
               <img src="{{ asset('images/logo.png') }}"  alt="Image" class="img-fluid">
             </a>
           </div>
@@ -119,8 +119,9 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            
-                            <a class="dropdown-item" href="{{ route('topics.list') }}">Manage Topics</a>
+                            @if (Auth::user()->is_admin)
+                              <a class="dropdown-item" href="{{ route('topics.list') }}">Manage Topics</a>
+                            @endif
                         </div>
                     </li>
                     @endguest

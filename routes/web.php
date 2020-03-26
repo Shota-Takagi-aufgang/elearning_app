@@ -25,8 +25,7 @@ Route::get('/category', function ()
 });
 
 Route::get('/category/{category}/topic', function ($category) {
-    // $topic = Topic::where('category', $category)->get();
-    $topics = Topic::paginate(10);
+    $topics = Topic::where('category', $category)->paginate(10);
     return view('topics.topic', compact('category','topics'));
 });
 

@@ -16,7 +16,7 @@ class TopicController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'min:3', 'max:50'],
             'descripiton' => ['required', 'string','min:6', 'max:255'],
-            'category' => ['required', 'string', 'min:3', 'max:50',]
+            'category' => ['required']
         ]);
 
         $topic = Topic::create([

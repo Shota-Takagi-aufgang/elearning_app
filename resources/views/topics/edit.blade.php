@@ -15,31 +15,31 @@
             </div>
             {{-- Check Box of Categories --}}
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="category" id="category" value="mechanical-engineering" checked>
+                <input class="form-check-input" type="radio" name="category" id="category" value="Material Engineering" checked>
                 <label class="form-check-label" for="category">
                   Mechanical Engineering
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="category" id="category" value="material-engineering" checked>
+                <input class="form-check-input" type="radio" name="category" id="category" value="Material Engineering" checked>
                 <label class="form-check-label" for="category">
                   Material Engineering
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="category" id="category" value="control-engineering" checked>
+                <input class="form-check-input" type="radio" name="category" id="category" value="Control Engineering" checked>
                 <label class="form-check-label" for="category">
                   Control Engineering
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="category" id="category" value="fluid-dynamics" checked>
+                <input class="form-check-input" type="radio" name="category" id="category" value="Fluiddynamics" checked>
                 <label class="form-check-label" for="category">
                   Fluid Dynamics
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="category" id="category" value="thermo-dynamics" checked>
+                <input class="form-check-input" type="radio" name="category" id="category" value="Thermodynamics" checked>
                 <label class="form-check-label" for="category">
                   Thermodynamics
                 </label>
