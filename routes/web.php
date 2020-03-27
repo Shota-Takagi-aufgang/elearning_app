@@ -48,12 +48,12 @@ Route::patch('/admin/topics/{id}/questions/{question_id}/update','QuestionContro
 Route::get('/admin/topics/{id}/{question_id}/delete','QuestionController@delete')->name('question.delete');
 
 // For answering the questions  
-Route::get('/topics/{topic_id}/questions/{question_id}/answer/new', 'AnswerController@start')->name('start');
-// Route::post('/topics/{topic_id}/results', 'AnswerController@results')->name('results');
+Route::get('/topics/{topic_id}/lessons/{lesson_id}/quiz', 'AnswerController@quiz')->name('quiz');
+Route::post('/topics/{topic_id}/lessons/{lesson_id}/quiz', 'AnswerController@saveAnswers')->name('answer.save');
 
-Route::get('/test', function () {
-    return view('/answers.answer');
-});
+// For counting how many times User study
+Route::get('/topics/{topic_id}/lesson', 'LessonController@lesson')->name('lesson');
+Route::get('/topics/{topic_id}/lessons/{lesson_id}/result', 'LessonController@result')->name('result');
 
 //  For follow-follower functional
 Route::get('/userlist', 'UserController@userlist')->name('userlist');
