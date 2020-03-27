@@ -17,7 +17,7 @@ class QuestionController extends Controller
     {
         $question = Question::create([
             'topic_id' => $id,
-            'question' => $request->question,
+            'question' => $request->title,
             'option1' => $request->option1,
             'option2' => $request->option2,
             'option3' => $request->option3,

@@ -23,11 +23,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 text-center">
-                            <a href="" class="text-primary mx-2">2</a>
+                            <a href="" class="text-primary mx-2">{{ auth()->user()->followedUsers()->count() }}</a>
                             <a>following</a>
                         </div>
                         <div class="col-sm-6 text-center">
-                            <a href="" class="text-primary">6</a>
+                            <a href="" class="text-primary">{{ auth()->user()->followers()->count() }}</a>
                             <a>followers</a>
                         </div>
                     </div>
