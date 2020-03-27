@@ -42,6 +42,6 @@ Route::get('/admin/topics/{id}/delete','TopicController@delete')->name('topic.de
 Route::get('/admin/topics/{id}/questions/create', 'QuestionController@create')->name('question.create');
 Route::post('/admin/topics/{id}/questions/new', 'QuestionController@store')->name('question.store');
 Route::get('/admin/topics/{id}/questions','QuestionController@list')->name('questions.list');
-// Route::get('/admin/topics/{id}/questions/{question_id}/edit','QuestionController@edit')->name('question.edit');
-// Route::post('/admin/topics/{id}//questions/{question_id}/update','QuestionController@update')->name('question.update');
-// Route::get('/admin/topics/{id}/{question_id}/delete','QuestionController@delete')->name('question.delete');
+Route::get('/admin/topics/{id}/questions/{question_id}/edit','QuestionController@edit')->name('question.edit');
+Route::patch('/admin/topics/{id}/questions/{question_id}/update','QuestionController@update')->name('question.update');
+Route::get('/admin/topics/{id}/{question_id}/delete','QuestionController@delete')->name('question.delete');

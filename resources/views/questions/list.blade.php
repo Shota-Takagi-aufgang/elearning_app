@@ -18,8 +18,8 @@
                 <tr>
                     <td>{{ $question->question }}</td>
                     <td>
-                        <a class="btn btn-warning" href="">Edit</a>
-                        <a class="btn btn-danger" href="">Delete</a></td>   
+                        <a class="btn btn-warning" href="{{ route('question.edit', ['id' =>$topic->id, 'question_id'=>$question->id]) }}">Edit</a>
+                        <a class="btn btn-danger" href="{{ route('question.delete', ['id' =>$topic->id, 'question_id'=>$question->id]) }}">Delete</a></td>   
                     <td>
                         <div class="dropdown open">
                             <button class="btn btn-secondary dropdown-toggle"

@@ -8,7 +8,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="">Question</label>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control" name="question">
                 </div>
                 <div class="container">
                     <div class="row">
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 <button type="submit" class="btn btn-primary">Create</button>
-            <div><a class="btn-primary" href=""> Back</a></div>
+            <div><a class="btn-primary" href="{{ route('questions.list', compact('questions', 'topic')) }}"> Back</a></div>
             </form>
         </div>
     </div>
