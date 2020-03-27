@@ -8,7 +8,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="">Question</label>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control" name="question">
                 </div>
                 <div class="container">
                     <div class="row">
