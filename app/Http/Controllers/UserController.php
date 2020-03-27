@@ -28,6 +28,12 @@ class UserController extends Controller
         $follower = auth()->user();
         $follower->followedUsers()->attach($followed_id);
 
+        // $activity = Activity::create([
+        //     'user_id' => auth()->user()->id,
+        //     'activity_id' => $user->activity_id,
+        //     'activity_type' => $user
+        // ]);
+
         return back();
     }
 
@@ -50,4 +56,9 @@ class UserController extends Controller
 
     //     return view('users.followerslist', compact('users'));
     // }
+
+    public function activity(User $user) 
+    {
+        return view('/home', compact('user'));
+    }
 }

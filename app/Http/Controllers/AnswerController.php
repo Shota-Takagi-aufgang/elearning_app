@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Topic;
 use App\Question;
 use App\Answer;
+use App\Lesson;
 
 class AnswerController extends Controller
 {
@@ -15,7 +16,8 @@ class AnswerController extends Controller
         return view('answers.answer', compact('questions', 'topic_id', 'lesson_id'));
     }
 
-    public function saveAnswers(Request $request, $topic_id, $lesson_id) {
+    public function saveAnswers(Request $request, $topic_id, $lesson_id) 
+    {
 
         $answer1 = Answer::create([
             'user_id' => auth()->user()->id,
@@ -38,7 +40,15 @@ class AnswerController extends Controller
             'lesson_id' => $lesson_id
         ]);
         // Results is saved
+        
+        if ($request->lastPage == "true") {
+            $lesson = Lesson::find($lesson_id);
 
+            $lesson->activity()->create([
+                'user_id' => auth()->user()->id
+            ]);
+        }
+        
         return redirect($request->nextPageUrl);
     }
 }
