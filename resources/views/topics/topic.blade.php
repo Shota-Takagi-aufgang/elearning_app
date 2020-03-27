@@ -13,16 +13,25 @@
                 <a class="nav-link active" href="">Not learned</a>
             </li>
         </ul>
-    <h1 class="ml-2 mt-2">{{ $category }}</h1>
-        <div class="col-sm-12 col-lg-6">
-            <div class="card">
-                <h3 class="card-header">Featured</h3>
-                <div class="card-body">
-                  <h4 class="card-title">Special title treatment</h4>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#!" class="btn btn-primary">Study</a>
+    <h1 class="ml-2 mt-4">{{ $category }}</h1>
+        <ul class="list-group">
+            <div class="row">
+            @foreach ($topics as $topic)
+                <div class="col-sm-12 col-lg-6">
+                    <div class="card mt-3">
+                        <h3 class="card-header">{{ $topic->title }}</h3>
+                        <div class="card-body">
+                        <p class="card-text">{{ $topic->description }}</p>
+                        <a href="#!" class="btn btn-primary">Study</a>
+                        </div>
+                    </div>
                 </div>
+            @endforeach
             </div>
+        </ul>
+        <div class="d-flex justify-content-center">
+            {{ $topics->links() }}
         </div>
+    </div>
     </div>
 @endsection
