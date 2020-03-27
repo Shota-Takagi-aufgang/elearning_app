@@ -24,8 +24,7 @@ Route::get('/category', function ()
     return view('category');
 });
 
-Route::get('/category/{category}/topic', function ($category) 
-{
+Route::get('/category/{category}/topic', function ($category) {
     // $topic = Topic::where('category', $category)->get();
     return view('topics.topic', compact('category'));
 });
@@ -38,3 +37,11 @@ Route::get('/admin/topics','TopicController@list')->name('topics.list');
 Route::get('/admin/topics/{id}/edit','TopicController@edit')->name('topic.edit');
 Route::post('/admin/topics/{id}/update','TopicController@update')->name('topic.update');
 Route::get('/admin/topics/{id}/delete','TopicController@delete')->name('topic.delete');
+
+// For managing questions
+Route::get('/admin/topics/{id}/questions/create', 'QuestionController@create')->name('question.create');
+Route::post('/admin/topics/{id}/questions/new', 'QuestionController@store')->name('question.store');
+Route::get('/admin/topics/{id}/questions','QuestionController@list')->name('questions.list');
+// Route::get('/admin/topics/{id}/questions/{question_id}/edit','QuestionController@edit')->name('question.edit');
+// Route::post('/admin/topics/{id}//questions/{question_id}/update','QuestionController@update')->name('question.update');
+// Route::get('/admin/topics/{id}/{question_id}/delete','QuestionController@delete')->name('question.delete');
