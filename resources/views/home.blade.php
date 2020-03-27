@@ -9,8 +9,7 @@
 
 <div class="container home">
     <div class="row">
-        
-        <div class="col-sm-12 col-lg-3">
+        <div class="col-sm-4 col-lg-4">
             <div class="card">
                     <img class="d-block mt-3 mx-auto" src="images/ミッキー.jpeg" alt="User">
                     <div class="card-body mx-auto">
@@ -42,18 +41,17 @@
 
             </div>
         </div>
-
-        <div class="col-sm-12 col-lg-8">
+        <div class="col-sm-8 col-lg-8">
             <div class="card-deck">
                 <div class="card ml-3 mt-3">
                     <div class="card-body">
                         <title>ACTIVITY FEED</title>
-                        <div>Nothing to show</div>
+                        <div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <!-- END slider -->
 @endsection

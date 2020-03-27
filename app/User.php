@@ -52,4 +52,8 @@ class User extends Authenticatable
     public function isFollowing($followed_id) {
         return $this->followedUsers()->where('followed_id', $followed_id)->exists();
     }
+
+    public function activity() {
+        return $this->morphOne('App\Activity', 'notifiable');
+    }
 }

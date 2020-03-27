@@ -23,4 +23,9 @@ class LessonController extends Controller
         }
         return view('answers.lessons', compact('topic_id','lesson_id', 'lesson', 'correct_numbers'));
     }
+
+    public function activity(Lesson $lesson)
+    {
+        return view('/home', compact('lesson'));
+    }
 }

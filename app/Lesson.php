@@ -19,4 +19,8 @@ class Lesson extends Model
     public function topic() {
         return $this->belongsTo('App\Topic');
     }
+
+    public function activity() {
+        return $this->morphOne('App\Activity', 'notifiable');
+    }
 }

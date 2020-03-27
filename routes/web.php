@@ -54,6 +54,7 @@ Route::post('/topics/{topic_id}/lessons/{lesson_id}/quiz', 'AnswerController@sav
 // For counting how many times User study
 Route::get('/topics/{topic_id}/lesson', 'LessonController@lesson')->name('lesson');
 Route::get('/topics/{topic_id}/lessons/{lesson_id}/result', 'LessonController@result')->name('result');
+Route::get('/home', 'LessonController@activity')->name('lesson.activity');
 
 //  For follow-follower functional
 Route::get('/userlist', 'UserController@userlist')->name('userlist');
@@ -62,3 +63,4 @@ Route::get('/follow/{followed_id}/','UserController@follow')->name('user.follow'
 Route::get('/unfollow/{followed_id}/','UserController@unfollow')->name('user.unfollow');
 // Route::get('/users/{user_id}/followinglist','UserController@followinglist')->name('users.followinglist');
 // Route::get('/users/{user_id}/followerslist','UserController@followerlist')->name('users.followerslist');
+Route::get('/home', 'UserController@activity')->name('user.activity');
