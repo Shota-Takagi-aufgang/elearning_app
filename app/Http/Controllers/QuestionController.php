@@ -33,9 +33,9 @@ class QuestionController extends Controller
         return view('questions.list', compact('questions', 'topic'));
     }    
 
-    public function edit($id) {
+    public function edit($id, $question_id) {
         $topic = Topic::find($id);
-        $question = Question::find(1);
+        $question = Question::find($question_id);
         return view('questions.edit', compact('topic','question'));
     }
 
