@@ -25,4 +25,24 @@ class TopicController extends Controller
         $topics = Topic::all();
         return view('topics.list', compact('topics'));
     }    
+
+    public function edit($id) {
+        $topic = Topic::find($id);
+        return view('topics.edit', compact('topic'));
+    }
+
+    public function delete($id) {
+        $topic = Topic::find($id);
+        $topic->delete();
+        return redirect()->route('topics.list');
+    }
+
+    public function update(Request $request ,$id) {
+        $topic = Topic::find($id);
+        $topic->title = $request->title;
+        $topic->description = $request->description;
+        $topic->category = $request->category;
+        $topic->save();
+        return redirect()->route('topics.list');
+    }
 }
