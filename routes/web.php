@@ -18,6 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/edit','HomeController@edit')->name('profileedit');
+Route::patch('/home/update', 'HomeController@update')->name('home.update');
+Route::get('/home/avatar', 'HomeController@changeAvatar')->name('avatar');
+Route::patch('/home/uploadAvatar', 'HomeController@uploadAvatar')->name('uplaodAvater');
 
 Route::get('/category', function () 
 {
@@ -58,5 +62,5 @@ Route::get('/userlist', 'UserController@userlist')->name('userlist');
 Route::get('/users/{user_id}/show','UserController@show')->name('users.show');
 Route::get('/follow/{followed_id}/','UserController@follow')->name('user.follow');
 Route::get('/unfollow/{followed_id}/','UserController@unfollow')->name('user.unfollow');
-// Route::get('/users/{user_id}/followinglist','UserController@followinglist')->name('users.followinglist');
-// Route::get('/users/{user_id}/followerslist','UserController@followerlist')->name('users.followerslist');
+Route::get('/users/{user_id}/followinglist','UserController@followinglist')->name('users.followinglist');
+Route::get('/users/{user_id}/followerslist','UserController@followerlist')->name('users.followerslist');

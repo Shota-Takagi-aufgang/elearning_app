@@ -47,16 +47,16 @@ class UserController extends Controller
         return back();
     }
 
-    // public function followinglist($id) {
-    //     $users = User::where('user_id', $user_id)->get();
+    public function followinglist($id) {
+        $users = User::where('user_id', $user_id)->get();
 
-    //     return view('users.followinglist', compact('users'));
-    // }
+        return view('users.followinglist', compact('users'));
+    }
 
-    // public function followerlist($id) {
-    //     $users = User::where('user_id', $user_id)->get();
+    public function followerlist($id) {
+        $users = User::where('user_id', $user_id)->get();
 
-    //     return view('users.followerslist', compact('users'));
-    // }
+        return view('users.followerslist', compact('users'));
+    }
 
 }

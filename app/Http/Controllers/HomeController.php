@@ -63,4 +63,32 @@ class HomeController extends Controller
         ]);
         return redirect('home');
     }
+
+    public function changeAvatar() {
+        return view('users.avater');
+    }
+
+    public function uploadAvatar(Request $request) 
+    {
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,jpg,png,gif|max:1000'
+        ]);
+
+        // HOMEWORK!!!!
+        // if(auth()->user()->avatar != 'default.png') {
+        //     //Delete the file in /public/images folder
+        //     $oldFilename = auth()->user()->avatar;
+        //     unlink(public_path('images').'/'. $oldFilename);
+        // }
+
+    $fileName = time().'.'.$request->avatar->getClientOriginalExtension();
+
+    $request->avatar->move(public_path('images'), $fileName) ;
+
+    auth()->user()->update([
+        'avatar' => $fileName
+    ]);
+
+    return redirect()->route('home');
+    }
 }
